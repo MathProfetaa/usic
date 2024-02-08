@@ -168,9 +168,9 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    const id_service = 'service_f9wbzvu';
-    const id_template = 'template_6al1gbq';
-    const user = 'VDAb92kpE1yX2kNg2';
+    let id_service = 'service_f9wbzvu';
+    let id_template = 'template_6al1gbq';
+    let user = 'VDAb92kpE1yX2kNg2';
 
 var data = {
 service_id: id_service,
