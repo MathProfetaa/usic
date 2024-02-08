@@ -157,7 +157,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
+require('dotenv').config();
 $(document).ready(function() {
 $("#contato").submit(function(event) {
     event.preventDefault();
