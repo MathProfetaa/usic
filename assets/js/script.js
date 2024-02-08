@@ -1,5 +1,5 @@
 'use strict';
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 // element toggle function
@@ -157,7 +157,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 require('dotenv').config();
 $(document).ready(function() {
 $("#contato").submit(function(event) {
