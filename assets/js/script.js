@@ -157,7 +157,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
+import 'dotenv/config'
 {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> */}
 $(document).ready(function() {
 $("#contato").submit(function(event) {
@@ -166,7 +166,6 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    require('dotenv').config()
     const id_service = process.env.id_service;
     const id_template = process.env.id_template;
     const user = process.env.id_user;
