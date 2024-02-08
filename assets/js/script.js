@@ -157,43 +157,37 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-  const API_URL = "https://api.emailjs.com/api/v1.0/email/send-form";
+$(document).ready(function() {
+$("#contato").submit(function(event) {
+    event.preventDefault();
+    // Obter os dados do formulário
+    const nome = $("#nome").val();
+    const email = $("#email").val();
+    const mensagem = $("#mensagem").val();
+    let id_service = 'service_f9wbzvu';
+    let id_template = 'template_6al1gbq';
+    let user = 'VDAb92kpE1yX2kNg2'
 
-  function enviarFormulario() {
-      // Obter os dados do formulário
-      const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const mensagem = document.getElementById("mensagem").value;
-  
-      // Criar o corpo da mensagem
-      const corpoMensagem = `
-          Nome: ${nome}
-          Email: ${email}
-          Mensagem: ${mensagem}
-      `;
-  
-      // Criar o objeto de dados para a API
-      const dados = {
-          from: "contato@matheusqa.eu",
-          to: "contato@matheusqa.eu",
-          subject: 'Contato do Site',
-          text: corpoMensagem,
-      };
-  
-      // Enviar o email usando a API
-      $.ajax({
-          url: API_URL,
-          method: "POST",
-          data: JSON.stringify(dados),
-          success: function(response) {
-              console.log(response);
-              alert("Email enviado com sucesso!");
-          },
-          error: function(error) {
-              console.log(error);
-              alert("Erro ao enviar o email!");
-          },
-      });
-  
-      return false;
-  }
+var data = {
+service_id: id_service,
+template_id: id_template,
+user_id: user,
+template_params: {
+'Nome': nome,
+'Email': email,
+'Mensagem': mensagem,
+}
+};
+
+$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+type: 'POST',
+data: JSON.stringify(data),
+contentType: 'application/json'
+}).done(function() {
+alert('Your mail is sent!');
+}).fail(function(error) {
+alert('Oops... ' + JSON.stringify(error));
+});
+
+})
+})
