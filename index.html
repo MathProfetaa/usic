@@ -1169,6 +1169,9 @@ Implementation of the software quality sector in the company.
                 $("#contato").submit(function(event) {
                     event.preventDefault();
     
+
+  
+                    
                     // Obter os dados do formulário
                     const nome = $("#nome").val();
                     const email = $("#email").val();
@@ -1179,13 +1182,19 @@ Implementation of the software quality sector in the company.
                         Nome: ${nome}
                         Email: ${email}
                         Mensagem: ${mensagem}
-                    `;
+                        
+                    `
+                    var data = {
+                    service_id: 'service_j4jw1eq',
+                    template_id: 'template_vk19z9j',
+                    user_id: 'L_xG36xBQVpfRRoGb',
+    };
     
                     // Enviar o email usando a API
                     $.ajax({
                         url: "https://api.emailjs.com/api/v1.0/email/send",
                         method: "POST",
-                        data: JSON.stringify({
+                        data: JSON.stringify(data) ({
                             from: "contato@matheusqa.eu",
                             to: "contato@matheusqa.eu",
                             text: corpoMensagem,
