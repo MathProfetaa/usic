@@ -1165,29 +1165,38 @@ Implementation of the software quality sector in the company.
 
           </form>
           <script>
-            $('#contato').on('submit', function(event) {
-    event.preventDefault(); // prevent reload
-     // Obter os dados do formulário
-     const nome = $("#nome").val();
-     const email = $("#email").val();
-     const mensagem = $("#mensagem").val();
-    
-    var formData = new FormData(this);
-    formData.append('service_id', 'service_f9wbzvu');
-    formData.append('template_id', 'template_6al1gbq');
-    formData.append('user_id', 'VDAb92kpE1yX2kNg2');
- 
-    $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-        type: 'POST',
-        data: formData, nome, email, mensagem,
-        contentType: false, // auto-detection
-        processData: false // no need to parse formData to string
-    }).done(function() {
-        alert('Your mail is sent!');
-    }).fail(function(error) {
-        alert('Oops... ' + JSON.stringify(error));
-    });
+            $(document).ready(function() {
+            $("#contato").submit(function(event) {
+                event.preventDefault();
+
+                // Obter os dados do formulário
+                const nome = $("#nome").val();
+                const email = $("#email").val();
+                const mensagem = $("#mensagem").val();
+
+    var data = {
+      service_id: 'service_f9wbzvu',
+      template_id: 'template_6al1gbq',
+      user_id: 'VDAb92kpE1yX2kNg2',
+      template_params: {
+        'Nome': nome,
+        'Email': email,
+        'Mensagem': mensagem,
+    }
+};
+
+$.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json'
+}).done(function() {
+    alert('Your mail is sent!');
+}).fail(function(error) {
+    alert('Oops... ' + JSON.stringify(error));
 });
+  
+            })
+          })
         </script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
           <script src="./assets/js/script.js"></script>
