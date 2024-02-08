@@ -157,8 +157,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-import 'dotenv/config'
+
 {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> */}
+
 $(document).ready(function() {
 $("#contato").submit(function(event) {
     event.preventDefault();
@@ -166,9 +167,9 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    const id_service = process.env.id_service;
-    const id_template = process.env.id_template;
-    const user = process.env.id_user;
+    const id_service = 'service_f9wbzvu';
+    const id_template = 'template_6al1gbq';
+    const user = 'VDAb92kpE1yX2kNg2'
 
 var data = {
 service_id: id_service,
