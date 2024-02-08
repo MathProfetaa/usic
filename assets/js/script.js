@@ -166,8 +166,8 @@ $("#contato").submit(function(event) {
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
     const id_service = process.env.id_service;
-    const id_template = process.env.id_service;
-    const user = process.env.id_service;
+    const id_template = process.env.id_template;
+    const user = process.env.user;
 
 var data = {
 service_id: id_service,
