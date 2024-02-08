@@ -1167,6 +1167,10 @@ Implementation of the software quality sector in the company.
           <script>
             $('#contato').on('submit', function(event) {
     event.preventDefault(); // prevent reload
+     // Obter os dados do formulário
+     const nome = $("#nome").val();
+     const email = $("#email").val();
+     const mensagem = $("#mensagem").val();
     
     var formData = new FormData(this);
     formData.append('service_id', 'service_f9wbzvu');
@@ -1175,7 +1179,7 @@ Implementation of the software quality sector in the company.
  
     $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
         type: 'POST',
-        data: formData,
+        data: formData, nome, email, mensagem,
         contentType: false, // auto-detection
         processData: false // no need to parse formData to string
     }).done(function() {
