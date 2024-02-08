@@ -156,76 +156,47 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
-  function enviarMensagem() {
-    // Obter os dados do formulário
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem').value;
+
+  const API_URL = "https://api.emailjs.com/v1/email/send";
+
+  function enviarFormulario() {
+      // Obter os dados do formulário
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
   
-    // Validar os valores
-    if (!nome || !email || !mensagem) {
-      alert('Preencha todos os campos!');
-      return;
-    }
+      // Criar o corpo da mensagem
+      const corpoMensagem = `
+          Nome: ${nome}
+          Email: ${email}
+          Mensagem: ${mensagem}
+      `;
   
-    // Criar a URL para a requisição GET
-    const url = `https://api.emailjs.com/api/v1.0/email/send?from_name=${nome}&from_email=${email}&message=${mensagem}&to_email=contato@matheusqa.eu`;
+      // Criar o objeto de dados para a API
+      const dados = {
+          from: "contato@matheusqa.eu",
+          to: "contato@matheusqa.eu",
+          subject: 'Contato do Site',
+          text: corpoMensagem,
+      };
   
-    // Fazer a requisição GET
-    fetch(url, {
-      method: 'POST',
-    }).then(
-      response => {
-        if (response.status === 200) {
-          alert('Mensagem enviada com sucesso!');
-        } else {
-          alert('Erro ao enviar mensagem!');
-        }
-      }
-    );
+      // Enviar o email usando a API
+      $.ajax({
+          url: API_URL,
+          method: "POST",
+          data: JSON.stringify(dados),
+          headers: {
+              "Authorization": "2A428ooPdLH4HBFrT65bl",
+          },
+          success: function(response) {
+              console.log(response);
+              alert("Email enviado com sucesso!");
+          },
+          error: function(error) {
+              console.log(error);
+              alert("Erro ao enviar o email!");
+          },
+      });
+  
+      return false;
   }
-}
-
-function enviarEmail() {
-  // Obter os dados do formulário
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
-  const mensagem = document.getElementById("mensagem").value;
-
-  // Criar o corpo da mensagem
-  const corpoMensagem = `
-      Nome: ${nome}
-      Email: ${email}
-      Mensagem: ${mensagem}
-  `;
-
-  // Configurar o SMTP
-  const smtp = {
-      host: "smtp.zoho.eu",
-      port: 587,
-      secure: true,
-      auth: {
-          user: "contato@matheusqa.eu",
-          pass: "020921M@ria",
-      },
-  };
-
-  // Criar o objeto de email
-  const emailjs = require("emailjs-com");
-  const client = new emailjs.SMTPClient(smtp);
-
-  // Enviar o email
-  client.send({
-      from: "contato@matheusqa.eu",
-      to: "contato@matheusqa.eu",
-      text: corpoMensagem,
-  }, (err, message) => {
-      if (err) {
-          console.log(err);
-          alert("Erro ao enviar o email!");
-      } else {
-          console.log(message);
-          alert("Email enviado com sucesso!");
-      }
-  });
-}
