@@ -186,7 +186,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
           method: "POST",
           data: JSON.stringify(dados),
           headers: {
-              "Authorization": "2A428ooPdLH4HBFrT65bl",
+              "Authorization": "Xo1tVrkOv9tvRJHaW",
           },
           success: function(response) {
               console.log(response);
