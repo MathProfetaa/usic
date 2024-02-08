@@ -186,4 +186,46 @@ for (let i = 0; i < navigationLinks.length; i++) {
   }
 }
 
-document.getElementById('formulario').addEventListener('submit', enviarMensagem);
+function enviarEmail() {
+  // Obter os dados do formulário
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const mensagem = document.getElementById("mensagem").value;
+
+  // Criar o corpo da mensagem
+  const corpoMensagem = `
+      Nome: ${nome}
+      Email: ${email}
+      Mensagem: ${mensagem}
+  `;
+
+  // Configurar o SMTP
+  const smtp = {
+      host: "smtp.zoho.eu",
+      port: 587,
+      secure: true,
+      auth: {
+          user: "contato@matheusqa.eu",
+          pass: "020921M@ria",
+      },
+  };
+
+  // Criar o objeto de email
+  const emailjs = require("emailjs-com");
+  const client = new emailjs.SMTPClient(smtp);
+
+  // Enviar o email
+  client.send({
+      from: "contato@matheusqa.eu",
+      to: "contato@matheusqa.eu",
+      text: corpoMensagem,
+  }, (err, message) => {
+      if (err) {
+          console.log(err);
+          alert("Erro ao enviar o email!");
+      } else {
+          console.log(message);
+          alert("Email enviado com sucesso!");
+      }
+  });
+}
