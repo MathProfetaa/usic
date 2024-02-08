@@ -158,7 +158,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 $(document).ready(function() {
 $("#contato").submit(function(event) {
