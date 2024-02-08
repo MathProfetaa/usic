@@ -159,7 +159,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 $(document).ready(function() {
 $("#contato").submit(function(event) {
@@ -168,9 +169,9 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    const id_service = process.env.id_service;
-    const id_template = process.env.id_template;
-    const user = process.env.user;
+    const id_service = process.env.IDSERVICE;
+    const id_template = process.env.IDTEMPLATE;
+    const user = process.env.USER;
 
 var data = {
 service_id: id_service,
