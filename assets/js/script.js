@@ -185,9 +185,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
           url: API_URL,
           method: "POST",
           data: JSON.stringify(dados),
-          headers: {
-              "Authorization": "Xo1tVrkOv9tvRJHaW",
-          },
           success: function(response) {
               console.log(response);
               alert("Email enviado com sucesso!");

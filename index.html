@@ -1137,7 +1137,7 @@ Implementation of the software quality sector in the company.
       <!--
         - #CONTACT
       -->
-
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <article class="contact" data-page="contact">
 
         <header>
@@ -1148,7 +1148,7 @@ Implementation of the software quality sector in the company.
 
           <h3 class="h3 form-title">Contact Form</h3>
         
-          <form id="formulario" onsubmit="enviarFormulario()">>
+          <form id="contato">>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" id="nome" class="form-input" placeholder="Full name" required data-form-input>
@@ -1164,6 +1164,44 @@ Implementation of the software quality sector in the company.
             </button>
 
           </form>
+          <script>
+            $(document).ready(function() {
+                $("#contato").submit(function(event) {
+                    event.preventDefault();
+    
+                    // Obter os dados do formulário
+                    const nome = $("#nome").val();
+                    const email = $("#email").val();
+                    const mensagem = $("#mensagem").val();
+    
+                    // Criar o corpo da mensagem
+                    const corpoMensagem = `
+                        Nome: ${nome}
+                        Email: ${email}
+                        Mensagem: ${mensagem}
+                    `;
+    
+                    // Enviar o email usando a API
+                    $.ajax({
+                        url: "https://api.emailjs.com/api/v1.0/email/send",
+                        method: "POST",
+                        data: JSON.stringify({
+                            from: "contato@matheusqa.eu",
+                            to: "contato@matheusqa.eu",
+                            text: corpoMensagem,
+                        }),
+                        success: function(response) {
+                            console.log(response);
+                            alert("Email enviado com sucesso!");
+                        },
+                        error: function(error) {
+                            console.log(error);
+                            alert("Erro ao enviar o email!");
+                        },
+                    });
+                });
+            });
+        </script>
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
           <script src="./assets/js/script.js"></script>
    
