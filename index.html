@@ -1164,13 +1164,27 @@ Implementation of the software quality sector in the company.
             </button>
 
           </form>
-        <script type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        
-        <script type="text/javascript">
-          emailjs.init('L_xG36xBQVpfRRoGb')
+          <script>
+            $('#contato').on('submit', function(event) {
+    event.preventDefault(); // prevent reload
+    
+    var formData = new FormData(this);
+    formData.append('service_id', 'service_j4jw1eq');
+    formData.append('template_id', 'template_vk19z9j');
+    formData.append('user_id', 'L_xG36xBQVpfRRoGb');
+ 
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+        type: 'POST',
+        data: formData,
+        contentType: false, // auto-detection
+        processData: false // no need to parse formData to string
+    }).done(function() {
+        alert('Your mail is sent!');
+    }).fail(function(error) {
+        alert('Oops... ' + JSON.stringify(error));
+    });
+});
         </script>
-
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
           <script src="./assets/js/script.js"></script>
    

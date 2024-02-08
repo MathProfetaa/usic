@@ -157,23 +157,43 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-const btn = document.getElementById('enviar');
+  const API_URL = "https://api.emailjs.com/api/v1.0/email/send-form";
 
-document.getElementById('contato')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Sending...';
-
-   const serviceID = 'service_j4jw1eq';
-   const templateID = 'template_vk19z9j';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
+  function enviarFormulario() {
+      // Obter os dados do formulário
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
+  
+      // Criar o corpo da mensagem
+      const corpoMensagem = `
+          Nome: ${nome}
+          Email: ${email}
+          Mensagem: ${mensagem}
+      `;
+  
+      // Criar o objeto de dados para a API
+      const dados = {
+          from: "contato@matheusqa.eu",
+          to: "contato@matheusqa.eu",
+          subject: 'Contato do Site',
+          text: corpoMensagem,
+      };
+  
+      // Enviar o email usando a API
+      $.ajax({
+          url: API_URL,
+          method: "POST",
+          data: JSON.stringify(dados),
+          success: function(response) {
+              console.log(response);
+              alert("Email enviado com sucesso!");
+          },
+          error: function(error) {
+              console.log(error);
+              alert("Erro ao enviar o email!");
+          },
+      });
+  
+      return false;
+  }
