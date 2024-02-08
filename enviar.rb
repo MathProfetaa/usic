@@ -31,3 +31,12 @@ end
 
 # Mensagem de sucesso
 puts 'Email enviado com sucesso!'
+
+# Script JavaScript para alert e redirecionamento
+script = <<~JS
+  alert('Mensagem enviada com sucesso!');
+  window.location.href = 'index.html'; // Altere para a URL da sua página inicial
+JS
+
+# Exibição do script JavaScript
+puts "<script>#{script}</script>"
