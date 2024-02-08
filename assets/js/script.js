@@ -156,7 +156,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
-
+}
   const API_URL = "https://api.emailjs.com/v1/email/send";
 
   function enviarFormulario() {
@@ -200,4 +200,3 @@ for (let i = 0; i < navigationLinks.length; i++) {
   
       return false;
   }
-}
