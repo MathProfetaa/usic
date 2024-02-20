@@ -42,16 +42,7 @@ build-iPhoneSimulator/
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
-*.env
-node_modules
-package-lock.json
-package.json
-.github
-*.txt
-# Ignore arquivos relacionados às chaves de API
-.env
-CNAME
-.gitignore
+
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
 # Gemfile.lock
@@ -60,7 +51,6 @@ CNAME
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-*.env
+.env
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
-*
