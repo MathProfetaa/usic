@@ -164,9 +164,6 @@ body { background: var(--smoky-black); }
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
-a:hover {
-  color: black;
-}
 .sidebar,
 article {
   background: var(--eerie-black-2);
@@ -484,9 +481,10 @@ main {
   transition: color var(--transition-1);
 }
 
-.navbar-link:hover,
+.navbar-link:hover{
+  color: black;
+}
 .navbar-link:focus { color: var(--light-gray-30); }
-
 
 
 
