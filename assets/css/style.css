@@ -169,7 +169,7 @@ body { background: var(--smoky-black); }
 article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 15px;
   box-shadow: var(--shadow-1);
   z-index: 1;
@@ -1319,6 +1319,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar-info { gap: 25px; }
 
   .avatar-box { border-radius: 30px; }
+  .img-picture { 
+    border-radius: 30px 30px 30px 30px;
+   }
 
   .avatar-box img { width: 120px; }
 
