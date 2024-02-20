@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 
 
 // element toggle function
@@ -172,9 +172,9 @@ $("#contato").submit(function(event) {
     // const user = 'VDAb92kpE1yX2kNg2'
 
 var data = {
-service_id: id_service,
-template_id: id_template,
-user_id: user,
+service_id: process.env.ID_SERVICE,
+template_id: process.env.ID_TEMPLATE,
+user_id: process.env.USER,
 template_params: {
 'Nome': nome,
 'Email': email,
