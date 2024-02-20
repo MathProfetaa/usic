@@ -1,7 +1,4 @@
 'use strict';
-require ('dotenv').config();
-
-
 
 
 
@@ -170,14 +167,14 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    // const id_service = 'service_f9wbzvu';
-    // const id_template = 'template_6al1gbq';
-    // const user = 'VDAb92kpE1yX2kNg2'
+    const id_service = 'service_f9wbzvu';
+    const id_template = 'template_6al1gbq';
+    const user = 'VDAb92kpE1yX2kNg2'
 
 var data = {
-service_id: process.env.ID_SERVICE,
-template_id: process.env.ID_TEMPLATE,
-user_id: process.env.USER,
+service_id: id_service,
+template_id: id_template,
+user_id: user,
 template_params: {
 'Nome': nome,
 'Email': email,

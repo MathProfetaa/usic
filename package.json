@@ -1,25 +1,6 @@
 {
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "emailjs-com": "^3.2.0",
-    "express": "^4.18.2"
-  },
-  "name": "usic",
-  "description": "![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)\r ![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)\r ![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)\r [![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)\r [![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MathProfetaa/usic.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MathProfetaa/usic/issues"
-  },
-  "homepage": "https://github.com/MathProfetaa/usic#readme"
+    "dotenv": "^16.4.1",
+    "emailjs-com": "^3.2.0"
+  }
 }
