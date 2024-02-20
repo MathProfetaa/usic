@@ -1113,6 +1113,9 @@ main {
   line-height: 1.6;
 }
 
+a:hover {
+  color: black;
+}
 
 
 
