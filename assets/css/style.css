@@ -164,6 +164,7 @@ body { background: var(--smoky-black); }
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+
 .sidebar,
 article {
   background: var(--eerie-black-2);
@@ -475,16 +476,15 @@ main {
 }
 
 .navbar-link {
-  color: black;
+  color: var(--light-gray);
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
 
-.navbar-link:hover{
-  color: black;
-}
-/* .navbar-link:focus { color: var(--light-gray-30); } */
+.navbar-link:hover,
+.navbar-link:focus { color: var(--light-gray-30); }
+
 
 
 
@@ -1112,7 +1112,6 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
-
 
 
 
