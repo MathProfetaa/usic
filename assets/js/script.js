@@ -161,7 +161,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-{/* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> */}
 
 $(document).ready(function() {
 $("#contato").submit(function(event) {
@@ -170,9 +169,6 @@ $("#contato").submit(function(event) {
     const nome = $("#nome").val();
     const email = $("#email").val();
     const mensagem = $("#mensagem").val();
-    // const id_service = 'service_f9wbzvu';
-    // const id_template = 'template_6al1gbq';
-    // const user = 'VDAb92kpE1yX2kNg2'
 
 var data = {
 service_id: process.env.ID_SERVICE,
