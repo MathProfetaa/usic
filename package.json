@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/MathProfetaa/usic/issues"
   },
-  "homepage": "https://github.com/MathProfetaa/usic#readme"
+  "homepage": "https://github.com/MathProfetaa/usic#readme",
+  "devDependencies": {}
 }
