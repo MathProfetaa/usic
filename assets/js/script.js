@@ -194,3 +194,17 @@ alert('Oops... ' + JSON.stringify(error));
 
 })
 })
+
+
+const cookieBanner = document.getElementById('cookie-banner');
+const aceitarCookiesButton = document.getElementById('aceitar-cookies');
+
+aceitarCookiesButton.addEventListener('click', () => {
+    cookieBanner.style.display = 'none';
+});
+
+// Salve a preferência do usuário de aceitar cookies
+// ...
+
+// Exiba o banner de cookies apenas se o usuário não tiver aceitado cookies
+// ...

@@ -1864,3 +1864,33 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+}
+
+#cookie-banner p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+#aceitar-cookies {
+  margin: 0 auto;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+#aceitar-cookies:hover {
+  background-color: #bbb;
+}
