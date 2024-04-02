@@ -195,7 +195,6 @@ alert('Oops... ' + JSON.stringify(error));
 })
 })
 
-
 const cookieBanner = document.getElementById('cookie-banner');
 const aceitarCookiesButton = document.getElementById('aceitar-cookies');
 

@@ -1876,13 +1876,31 @@ textarea.form-input::-webkit-resizer { display: none; }
   text-align: center;
 }
 
-#cookie-banner p {
+#cookie-banner .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cookie-banner .texto {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  line-height: 1.5;
 }
 
-#aceitar-cookies {
+#cookie-banner .texto p {
+  margin-bottom: 10px;
+}
+
+#cookie-banner .texto a {
+  color: #000;
+  text-decoration: underline;
+}
+
+#cookie-banner #aceitar-cookies {
   margin: 0 auto;
   padding: 5px 10px;
   font-size: 16px;
@@ -1891,6 +1909,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   cursor: pointer;
 }
 
-#aceitar-cookies:hover {
+#cookie-banner #aceitar-cookies:hover {
   background-color: #bbb;
 }
