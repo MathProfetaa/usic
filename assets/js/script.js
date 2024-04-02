@@ -200,11 +200,41 @@ const cookieBanner = document.getElementById('cookie-banner');
 const aceitarCookiesButton = document.getElementById('aceitar-cookies');
 
 aceitarCookiesButton.addEventListener('click', () => {
+    // Salvar a preferência do usuário de aceitar cookies
+    setCookie('aceitouCookies', true, 365);
+
+    // Esconder o banner de cookies
     cookieBanner.style.display = 'none';
 });
 
-// Salve a preferência do usuário de aceitar cookies
-// ...
+// Função para salvar cookies
+function setCookie(nome, valor, dias) {
+    const data = new Date();
+    data.setTime(data.getTime() + (dias * 24 * 60 * 60 * 1000));
+    const expiracao = data.toUTCString();
+    document.cookie = `${nome}=${valor};expires=${expiracao};path=/`;
+}
 
-// Exiba o banner de cookies apenas se o usuário não tiver aceitado cookies
-// ...
+// Verifique se o usuário já aceitou cookies
+const cookiesAceitos = getCookie('aceitouCookies');
+
+if (cookiesAceitos) {
+    // Esconda o banner de cookies se o usuário já tiver aceitado cookies
+    cookieBanner.style.display = 'none';
+}
+
+// Função para obter cookies
+function getCookie(nome) {
+    const nomeIgual = nome + '=';
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(nomeIgual) === 0) {
+            return cookie.substring(nomeIgual.length, cookie.length);
+        }
+    }
+    return null;
+}
